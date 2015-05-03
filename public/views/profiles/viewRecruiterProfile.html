@@ -1,0 +1,73 @@
+
+		<div class = "container">
+		
+			<h3> Welcome to Career Fair Management System!! </h3> 
+			</br>
+			
+			<ul class="nav nav-tabs">
+				<li style="cursor: pointer;" ng-click="goToSearch()"><a ng-href="">Home</a></li>
+
+				<li style="cursor: pointer;" ng-click="goToEditProfile()"><a ng-href="" 
+				ng-show="!(currentUser.userType == 'Admin')">Edit Profile</a></li>
+
+				<li style="cursor: pointer;" class="active" 
+				ng-show="isMyProfile && currentUser.userType != 'Admin'"><a ng-href="">My Profile </a></li>
+
+				<li style="cursor: pointer;" ng-click="viewMyProfile()" 
+				ng-show="!isMyProfile && currentUser.userType != 'Admin'"><a ng-href="">My Profile </a></li>
+
+				<li style="cursor: pointer;" class="active" ng-show="!isMyProfile"><a ng-href="">Recruiter Profile</a></li>
+				
+				<li style="cursor: pointer;" ng-click="logout()"><a ng-href="">Logout</a></li>
+			</ul>
+ 
+			<div class="panel panel-info">
+			<h3 class="panel panel-heading" align="center"> <a href="" ng-click="viewUser({_id: companyId}, 'Company')">{{companyName}}</a></h3> 
+			
+				<div class="panel-body">
+					<label>First Name :</label>
+					{{firstName}}
+				</div> 
+				</br>
+				
+				<div class="panel-body">
+					<label>Last Name :</label>
+					{{lastName}}
+				</div> 
+				</br>
+				
+				<div class="panel-body">
+					<label>Email ID :</label>
+					{{email}}
+				</div> 
+				</br>
+				
+				<div class="panel-body">
+					<label>Contact No :</label>
+					{{contactNo}}
+				</div> 
+				</br>
+				
+				<div class="panel-body">
+					<label>Designation :</label>
+					{{designation}}
+				</div> 
+				</br>
+				
+				<div class="panel-body">
+					<label>City :</label>
+					{{city}}
+				</div> 
+				</br>
+				
+				<div class="panel-body">
+					<button class="col-sm-2 btn btn-danger" 
+					ng-show="currentUser.userType == 'Admin' || currentUser.userType == 'Company'" 
+					ng-click="deleteRecruiter(username)"> Delete Recruiter </button> 
+				</div>
+				</br></br>
+
+				</div>
+
+		</div>
+		
